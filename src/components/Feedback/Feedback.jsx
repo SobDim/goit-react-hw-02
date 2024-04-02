@@ -8,9 +8,9 @@ const Feedback = ({ state, totalFeedback, positive }) => {
       {totalFeedback ? (
         <div>
           <div className={s.wrapper}>
-            <h2>Good: {good};</h2>
-            <h2>Neutral: {neutral}; </h2>
-            <h2>Bad: {bad}; </h2>
+            <h2>Good: {good}</h2>
+            <h2>Neutral: {neutral}</h2>
+            <h2>Bad: {bad}</h2>
           </div>
 
           <p>Total: {totalFeedback} votes</p>
