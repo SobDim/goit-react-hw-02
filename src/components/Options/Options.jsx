@@ -1,11 +1,12 @@
-const Options = ({ buttons, updateFeedback }) => {
+const Options = ({ buttons, update, reset }) => {
   return (
     <div>
       {buttons.map(btn => (
-        <button onClick={() => updateFeedback(btn)} key={btn}>
+        <button onClick={() => update(btn)} key={btn}>
           {btn}
         </button>
       ))}
+      <button onClick={() => reset()}>Reset</button>
     </div>
   );
 };
