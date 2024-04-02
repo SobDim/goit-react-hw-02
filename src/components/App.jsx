@@ -1,8 +1,8 @@
 import './App.css';
-import Description from './components/Description/Description';
-import Feedback from './components/Feedback/Feedback';
-import Notification from './components/Notification/Notification';
-import Options from './components/Options/Options';
+import Description from './Description/Description';
+import Feedback from './Feedback/Feedback';
+import Notification from './Notification/Notification';
+import Options from './Options/Options';
 
 import { useState, useEffect } from 'react';
 
@@ -15,24 +15,13 @@ function App() {
     }
     return { good: 0, neutral: 0, bad: 0 };
   });
-  // const [state, setState] = useState({
-  //   good: 0,
-  //   neutral: 0,
-  //   bad: 0,
-  // });
+
   const totalFeedback = state.good + state.neutral + state.bad;
   const positiveFeedback = Math.round((state.good / totalFeedback) * 100);
 
   const updateFeedback = feedbackType => {
     setState(prev => ({ ...prev, [feedbackType]: prev[feedbackType] + 1 }));
   };
-
-  // useEffect(() => {
-  //   const savedState = localStorage.getItem('feedbackState');
-  //   if (savedState) {
-  //     setState(JSON.parse(savedState));
-  //   }
-  // }, []);
 
   useEffect(() => {
     window.localStorage.setItem('feedbackState', JSON.stringify(state));

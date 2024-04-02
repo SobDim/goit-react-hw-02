@@ -1,4 +1,5 @@
 import Notification from '../Notification/Notification';
+import s from './Feedback.module.css';
 
 const Feedback = ({ state, totalFeedback, positive }) => {
   const { good, neutral, bad } = state;
@@ -7,11 +8,14 @@ const Feedback = ({ state, totalFeedback, positive }) => {
     <>
       {totalFeedback ? (
         <div>
-          <h2>Good: {good}</h2>
-          <h2>neutral: {neutral}</h2>
-          <h2>bad: {bad}</h2>
+          <div className={s.wrapper}>
+            <h2>Good: {good};</h2>
+            <h2>Neutral: {neutral}; </h2>
+            <h2>Bad: {bad}; </h2>
+          </div>
+
           <p>Total: {totalFeedback} votes</p>
-          <p>Positive:{positive} %</p>
+          <p>Positive: {positive} %</p>
         </div>
       ) : (
         <Notification />
