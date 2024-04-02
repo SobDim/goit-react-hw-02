@@ -1,6 +1,7 @@
 import './App.css';
 import Description from './components/Description/Description';
 import Feedback from './components/Feedback/Feedback';
+import Notification from './components/Notification/Notification';
 import Options from './components/Options/Options';
 
 import { useState } from 'react';
@@ -17,11 +18,13 @@ function App() {
     setState(prev => ({ ...prev, [feedbackType]: prev[feedbackType] + 1 }));
   };
 
+  const totalFeedback = state.good + state.neutral + state.bad;
+
   return (
     <>
       <Description />
       <Options buttons={buttons} updateFeedback={updateFeedback} />
-      <Feedback state={state} />
+      {totalFeedback ? <Feedback state={state} /> : <Notification />}
     </>
   );
 }
