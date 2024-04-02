@@ -3,7 +3,6 @@ import s from './Feedback.module.css';
 
 const Feedback = ({ state, totalFeedback, positive }) => {
   const { good, neutral, bad } = state;
-  //   totalFeedback ?
   return (
     <>
       {totalFeedback ? (
