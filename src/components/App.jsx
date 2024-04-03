@@ -42,6 +42,7 @@ function App() {
         buttons={buttons}
         update={updateFeedback}
         reset={resetFeedback}
+        totalFeedback={totalFeedback}
       />
       {/* {totalFeedback ? <Feedback state={state} /> : <Notification />} */}
       <Feedback
